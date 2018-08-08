@@ -2,6 +2,9 @@ package com.asw.spring.springdemo.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 
@@ -23,6 +26,7 @@ public class Region implements Serializable {
 	@Column(name="REGION_NAME")
 	private String regionName;
 
+	@JsonIgnore
 	//bi-directional many-to-one association to Country
 	@OneToMany(mappedBy="region")
 	private List<Country> countries;

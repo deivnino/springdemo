@@ -26,13 +26,11 @@ public class Country implements Serializable {
 	@Column(name="COUNTRY_NAME")
 	private String countryName;
 
-	@JsonIgnore
 	//bi-directional many-to-one association to Region
 	@ManyToOne
 	@JoinColumn(name="REGION_ID")
 	private Region region;
 
-	@JsonIgnore
 	//bi-directional many-to-one association to Location
 	@OneToMany(mappedBy="country")
 	private List<Location> locations;
